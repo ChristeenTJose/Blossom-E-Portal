@@ -1,0 +1,199 @@
+body,html
+{
+	margin: 0px;
+	background-color: #d9d9d9;
+	color: white;
+}
+header
+{
+	width: 100%;
+	/*background-color: rgb(68,72,71);*/
+	background: linear-gradient(to right, #444748 50%, #b30000 50%);
+}
+nav
+{
+	background-color: white;
+	text-align: right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5%;
+	border-style: ridge;
+}
+.nav_link
+{
+	margin-left: 5%;
+}
+#logo
+{
+	float: left;
+	width:13%;
+}
+#header_image
+{
+	text-align: center;
+	width: 87%;
+	/*header_image width + logo width = 100% */
+}
+#home_heading
+{
+	text-align: center;
+}
+.page
+{
+	padding-top: 5px;
+	padding-bottom: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 25px;
+	text-align: justify;
+}
+h2
+{
+	text-decoration: underline;
+	font-family: "helvetica";
+}
+#home_page
+{
+	background-image: url("../images/backgroundEdited.jpg");
+	box-shadow: 5px 10px 10px #404040;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	width: 70%;
+	margin-left: 10%;
+	font-size: 30px;
+	padding-bottom: 5px;
+}
+#About_us
+{
+	background-color: #8c8c8c;
+}
+#Courses
+{
+	background-color: #ff751a;
+}
+#Courses_list
+{
+	list-style-type: none;
+}
+.course_card
+{
+	background-color: white;
+	color: black;
+	margin: 20px;
+	padding: 40px;
+	display: inline-block;
+	border-radius: 15px;
+	box-shadow: 5px 10px 10px #404040;
+}
+.course_card_heading
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bolder;
+}
+.course_card_image,#body2_logo
+{
+	height:350px;
+	background-size: 320px 320px;
+}
+.c_c_i_1
+{
+	background-image: url("../images/businessman-607788_640.png");
+}
+.c_c_i_2
+{
+	background-image: url("../images/businessman-607831_640.png");
+}
+.course_card_price
+{
+	font-family: monospace;
+}
+.course_card_button
+{
+	width: 100%;
+	background-color: orange;
+	padding: 10px;
+}
+#Reach_us
+{
+	background-color: #8c8c8c;
+}
+#map
+{
+	width: 100%;
+	text-align: center;
+}
+footer
+{
+	text-align: left;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+	padding-top: 10px;
+	font-size: 20px;
+	background-color: #000033;
+}
+.contact
+{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 40%;
+	margin-left:5%;
+	display: inline-block;
+	text-align: center;
+}
+.credits
+{
+	width: 100%;
+}
+#body2,#body3
+{
+	width: 50%;
+	margin-left: 25%;
+	padding: 20px;
+	background-color: #444748;
+	margin-top: 100px;
+	font-size: 30px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #ffff00;
+	box-shadow: 5px 10px 10px #666600;
+	margin-bottom: 5%;
+}
+#body2_header,#body3_header
+{
+	text-align: center;
+	margin-top: -50px;
+}
+#body2_logo
+{
+	margin: 0px auto;
+	width: 320px;
+	margin-top: -160px;
+	background-image: url("../images/head-659651_640.png");
+}
+#Submit_button,#Cancel_button,#Submit_button2,#Cancel_button2
+{
+	padding:20px;
+	width: 100%;
+	font-size: 30px;
+}
+#Submit_button,#Submit_button2
+{
+	background-color: #4CAF50;
+}
+#Cancel_button,#Cancel_button2
+{
+	background-color: #f44336;
+}
+input[type="text"],input[type="password"],input[type="email"],input[type="tel"]
+{
+	width: 70%;
+	height: 20px;
+	border-radius: 10px;
+	padding: 15px;
+}
+.labels
+{
+	width: 20%;
+	display: inline-block;
+}

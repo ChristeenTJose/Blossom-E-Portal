@@ -1,0 +1,126 @@
+body,html
+{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #ff751a;
+    padding: 10px;
+}
+header
+{
+  width: 100%;
+  /*background-color: rgb(68,72,71);*/
+  background: linear-gradient(to right, #444748 50%, #b30000 50%);
+}
+#logo
+{
+  float: left;
+  width:13%;
+}
+#header_image
+{
+  text-align: center;
+  width: 87%;
+  /*header_image width + logo width = 100% */
+}
+h1 
+{
+    background-color: #2F4F4F;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    color: #FFF0F5;
+    margin: 0px;
+    margin-top: 5px;
+}
+.course
+{
+  background-color: #FFF8DC;
+  padding: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+.courseFeatures
+{
+  float: left;
+  width: 30%;
+  height: 350px; 
+}
+ul 
+{
+  padding: 10px;
+}
+* 
+{
+  box-sizing: border-box;
+}
+article 
+{
+  float: left;
+  padding-left: 10px;
+  width: 70%;
+}
+li
+{
+  font-weight:bold
+}
+.price
+{
+  background-color:orangered; 
+  color: #F0F8FF; 
+  padding: 10px;
+}
+.mentor
+{
+  width:170px;
+  height:170px;
+  margin-left:15px;
+  float: right;
+}  
+span
+{
+  color:#2F4F4F;
+  font-weight:bold;
+}
+figcaption
+{
+  color:#191970;
+  font-weight:bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn 
+{
+  background-color:#191970;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 8px;
+  float: left;
+}
+.btn:hover 
+{
+  opacity: 0.8;
+}
+.btn:disabled
+{
+  opacity: 0.4;
+}
+.container 
+{ 
+  height: 100px;
+  position: relative;
+  border: none; 
+}
+.center 
+{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

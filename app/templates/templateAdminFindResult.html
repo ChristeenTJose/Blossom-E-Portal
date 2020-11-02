@@ -1,0 +1,8 @@
+{% extends "templateAdminNoResult.html" %}
+{% block adminContent %}
+	<div class="displayBlock">
+		<h1><div class="labels">Username: </div>{{results["username"]}}<h1>
+		<h2><div class="labels">Phone: </div>{{results["phone"]}}</h2>
+		<h2><div class="labels">Email ID: </div>{{results["email"]}}</h2>
+	</div>
+{% endblock %}

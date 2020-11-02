@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Blossum Education Solutions</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styling.css')}}">
+		<script src="{{url_for('static',filename='jquery-3.5.1.min.js')}}"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$("#body1").hide();
+				$("#body2").hide();
+				$("#body3").hide();
+				
+				{% block display %}{% endblock %}
+				
+				$("#link_home_page").click(function()
+				{
+					$("#home_page").hide().fadeIn(600);
+				});
+				$("#link_sign_in").click(function()
+				{
+					$("#body1").hide(1200);
+					$("#body2").show(1200);
+				});
+				$("#link_about_us").click(function()
+				{
+					$("#About_us").hide().fadeIn(600);
+				});
+				$("#link_courses").click(function()
+				{
+					$("#Courses").hide().fadeIn(600);
+				});
+				$("#link_reach_us").click(function()
+				{
+					$("#Reach_us").hide().fadeIn(600);
+				});
+				$("#link_sign_up").click(function()
+				{
+					$("#body2").hide(1200);
+					$("#body3").show(1200);
+				});
+				$("#Cancel_button").click(function()
+				{
+					$("#body2").hide(1200);
+					$("#body1").show(1200);
+				});
+				$("#Cancel_button2").click(function()
+				{
+					$("#body3").hide(1200);
+					$("#body2").show(1200);
+				});
+				$("#Accept").click(function() {
+					if ($("#Submit_button2").is(":disabled")) 
+					{
+    					$("#Submit_button2").removeAttr("disabled");
+    				} 
+    				else 
+    				{
+    					$("#Submit_button2").attr("disabled","disabled");
+    				}
+				});
+			});
+			function validate()
+			{
+				var psw2 = document.getElementById("psw_repeat");
+				var psw1 = document.getElementById("psw2");
+				var uname = document.getElementById("uname2");
+				if (uname.value.trim()=="")
+				{
+					alert('Blank values not allowed');
+					return false;
+				}
+				else
+				{
+      				if(psw2.value.localeCompare(psw1.value)==0)
+      				{
+      					return true;
+      				}
+					else
+					{
+						alert('Passwords do not match');
+						return false;
+					}
+				}
+			}
+			function validate2()
+			{
+				var uname = document.getElementById("uname");
+				if (uname.value.trim()=="")
+				{
+					alert('Blank values not allowed');
+					return false;
+				}
+				else
+				{
+      				return true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="body1">
+		<header>
+			<a href="#" target="_blank"><img id="logo" src="{{url_for('static',filename='images/logo.jpg')}}" height="200px" alt="logo" title="Open in new tab"/></a>
+			<div id="header_image">
+				<img src="{{url_for('static',filename='images/header.png')}}" height="200px" alt="Blossum" title="&quot;Welcome to Blossum Educational Solutions&quot;"/>
+			</div>
+		</header>
+		<nav>
+			<a class="nav_link" id="link_home_page" href="#">Home</a>
+			{% block sign %}<a class="nav_link" id="link_sign_in" href="#">Sign in/Sign up</a>{% endblock %}
+			<a class="nav_link" id="link_about_us" href="#About_us">About Us</a>
+			<a class="nav_link" id="link_courses" href="#Courses">Courses</a>
+			<a class="nav_link" id="link_reach_us" href="#Reach_us">Reach Us</a>
+		</nav>
+		<div id="home_page" class="page">
+			<h1 id="home_heading">&quot;An educational insight promoting dynamic and progressive learning among youngsters&quot;</h1>
+			<p>
+				We intend to identify, develop and promote adequate knowledge and skills that are essential for:
+				<ul>
+					<li class="home_content">An institution in its requirements, goals and vision in working as an organization</li>
+					<li class="home_content">An individual in his respective position as a student, teacher and professional</li>
+				</ul>
+			</p>
+			<br>
+		</div>
+		<div id="About_us" class="page">
+			<h2>About Us</h2>
+			<p>
+				We provide personalised packages for training, coaching, tutoring and mentoring as per the requirement of the institution, professionals, parents and students. Blossom is an endeavour that promotes the collective institutional goals and individualized aspirations. It aims at developing a community that's well equipped with knowledge, skills, aptitude and competencies, to become self-reliant and employable.
+			</p>
+			<p>
+				At Blossom;
+				<ul>
+					<li>The training programs are administered by expert trainers who are vibrant, motivational, language proficient and excellent orators.</li>
+					<li>Coaching programs are handled by experts in the respective subjects and will be examination oriented.</li>
+					<li>Career Coaching and Mentoring is to be provided as per the individual needs.</li>
+					<li>Professional language consulting and tutoring are the administered both at an individual level and as a group</li>
+				</ul>
+			</p>
+		</div>
+		<div id="Courses" class="page">
+			<h2>Courses</h2>
+			<ul id="Courses_list">
+				<li>
+					<details open>
+						<summary>Soft Skills</summary>
+							<div class="course_card">
+								<div class="course_card_heading">Employment Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Employment Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Communication Skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Communication Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Personal Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Personal Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Professional Skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Professional Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Social Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Social Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Attitudinal Skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Attitudinal Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Organizational Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Organizational Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">21st Century skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/21st Century skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Literacy Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Literacy Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Public Speaking Skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Public Speaking Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Methodical Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Methodical Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">The art of Delegation</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/The art of Delegation'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Assertive skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Assertive skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Presentation skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 50,000(100 hrs)</div>
+								<br>
+								<button onclick="location.href='/course/Presentation skills'" class="course_card_button">View</button>
+							</div>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary>Training Programmes</summary>
+						<div class="course_card">
+								<div class="course_card_heading">English Grammar Training</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 10000 (per day)</div>
+								<br>
+								<button onclick="location.href='/course/English Grammar Training'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Training Programmes for<br>Schools and Colleges</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 10000 (per day)</div>
+								<br>
+								<button onclick="location.href='/course/Training Programmes for Schools and Colleges'" class="course_card_button">View</button>
+							</div>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary>Professional Language Consulting</summary>
+						<div class="course_card">
+								<div class="course_card_heading">Spoken English</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Spoken English'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Essential Grammar for <br>placements</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Essential Grammar for placements'" class="course_card_button">Book</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Verbal reasoning</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Verbal reasoning'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Writing Strategies</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Writing Strategies'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">LSRW Skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/LSRW Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Interview Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Interview Skills'" class="course_card_button">View</button>
+							</div>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary>Mentoring and Career Coaching</summary>
+						<div class="course_card">
+								<div class="course_card_heading">Learning Skills</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Learning Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Life Skills</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Life Skills'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Personal and <br>Professional Etiquettes</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Personal and Professional Etiquettes'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Work Ethics</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Work Ethics'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">GK and Current Affairs<br>Training</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/GK and Current Affairs Training'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Foundation classes for<br>Civil Service</div>
+								<div class="course_card_image c_c_i_2"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Foundation classes for Civil Service'" class="course_card_button">View</button>
+							</div>
+							<div class="course_card">
+								<div class="course_card_heading">Motivational Classes</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 600 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/Motivational Classes'" class="course_card_button">View</button>
+							</div>
+					</details>
+				</li>
+				<li>
+					<details>
+						<summary>English Tutoring</summary>
+						<div class="course_card">
+								<div class="course_card_heading">English Tutoring</div>
+								<div class="course_card_image c_c_i_1"></div>
+								<div class="course_card_price">Price: 450 (per hour)</div>
+								<br>
+								<button onclick="location.href='/course/English Tutoring'" class="course_card_button">View</button>
+							</div>
+					</details>
+				</li>
+			</ul>
+		</div>
+		<div id="Reach_us" class="page">
+			<h2>Reach Us</h2>
+			<p>
+				The facilities of Blossom travel far and wide, within and outside of the state. Blossom team shall reach the respective institutions where the training sessions are to be provided. The coaching, mentoring and tutoring have both institutionalized and individualized facilities.
+			</p>
+			<div id="map"><img src="{{url_for('static',filename='images/map.png')}}"/ height="400px"></div>
+		</div>
+		<footer>
+			For further deatails please contact:<br>
+			<div class="contact">
+				18BCB0043<br>
+				Christeen T Jose<br>
+				<a href="mailto:christeent.jose2018@vitstudent.ac.in">christeent.jose2018@vitstudent.ac.in</a><br>
+				+91 9188731027
+			</div>
+			<div class="contact">
+				18BCE0563<br>
+				Princy Jain<br>
+				<a href="mailto:princy.jain2018@vitstudent.ac.in">princy.jain2018@vitstudent.ac.in</a><br>
+				+91 6387328465
+			</div>
+			<div class="credits">
+				Credits:<br><br>
+				Image by <a href="https://pixabay.com/users/panjoycz-719461/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=659651">PanJoyCZ</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=659651">Pixabay</a><br>
+				Image by <a href="https://pixabay.com/users/clker-free-vector-images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=41725">Clker-Free-Vector-Images</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=41725">Pixabay</a><br>
+				Logo made by <a href="https://www.designevo.com/logo-maker/" title="Free Online Logo Maker">DesignEvo free logo creator</a><br>
+			</div>
+		</footer>
+		</div>
+		<div id="body2">
+			<div id="body2_logo"></div>
+			<h2 id="body2_header">Sign in</h2>
+			<form action="/SignIn/" onsubmit="return validate2()" method="post">
+    			<div class="labels"><label for="uname"><b>Username: </b></label></div>
+    			<input type="text" placeholder="Enter Username" name="uname" id="uname" required pattern="^[a-zA-Z\s]+$"><br><br>
+				<div class="labels"><label for="psw"><b>Password: </b></label></div>
+    			<input type="password" placeholder="Enter Password" name="psw" id="psw" required><br><br>
+     	 		<a id="link_sign_up" href="#" style="color:dodgerblue;">New to Blossom? Click here to Sign Up..</a><br><br>
+				<input id="Submit_button" type="submit" value="Login"><br>
+    			<button id="Cancel_button" type="button">Cancel</button>
+			</form>
+		</div>
+		<div id="body3">
+			<div id="body2_logo"></div>
+			<h2 id="body3_header">Sign Up</h2>
+			<form action="/SignUp/" onsubmit="return validate()" method="post">
+    			<div class="labels"><label for="uname2"><b>Username: </b></label></div>
+    			<input type="text" placeholder="Enter Username" name="uname" id="uname2" required pattern="^[a-zA-Z\s]+$"><br><br>
+				<div class="labels"><label for="psw2"><b>Password: </b></label></div>
+    			<input type="password" placeholder="Enter Password" name="psw" id="psw2" required><br><br>
+    			<div class="labels"><label for="psw_repeat"><b>Repeat Password: </b></label></div>
+  				<input type="password" placeholder="Repeat Password" name="psw_repeat" id="psw_repeat" required><br><br>
+  				<div class="labels"><label for="phone"><b>Phone: </b></label></div>
+				<input type="tel" placeholder="Phone Number" name="phone" id="phone" required><br><br>
+				<div class="labels">Email ID:</div>
+				<input type="email" name="email" placeholder="Email ID" required><br><br>
+				<label>
+    			<input type="checkbox" name="agree" id="Accept">
+    			I accept the <a href="#agree" style="color:dodgerblue">Terms & Conditions</a>.
+  				</label><br><br>
+				<input id="Submit_button2" type="submit" value="Login" disabled="disabled"><br>
+    			<button id="Cancel_button2" type="button">Cancel</button>
+			</form>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+

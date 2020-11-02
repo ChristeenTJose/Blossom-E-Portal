@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Blossum Education Solutions</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/course.css')}}">
+		<script src="{{url_for('static',filename='jquery-3.5.1.min.js')}}"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$("body").hide();
+				$("body").show(1200);
+			});
+			function book()
+			{
+				var xhttp = new XMLHttpRequest();
+  				xhttp.onreadystatechange = function() 
+  				{
+    				if (this.readyState == 4 && this.status == 200) 
+    				{
+      					var center = document.getElementById("center");
+      					center.innerHTML = this.responseText; 
+    				}
+  				};
+				xhttp.open("GET", "/course/{{courseName}}/{{username}}", true);
+				xhttp.send();
+  			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<a href="/"><img id="logo" src="{{url_for('static',filename='images/logo.jpg')}}" height="200px" alt="logo" title="Open in new tab"/></a>
+			<div id="header_image">
+				<img src="{{url_for('static',filename='images/header.png')}}" height="200px" alt="Blossum" title="&quot;Welcome to Blossum Educational Solutions&quot;"/>
+			</div>
+		</header>
+		<h1>{{courseName}}</h1>
+		<div class="course">
+			<div class="courseFeatures">
+				<h2>Course Features</h2>
+				<ul>
+					<li><i>Lectures </i><span >&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp7 </span></li>
+					<li><i>Duration </i><span >&nbsp &nbsp  &nbsp &nbsp &nbsp 100H </span></li>
+					<li><i>Ratings </i><span>&nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp 4.1 </span></li>
+					<li><i>Certificate</i><span>&nbsp &nbsp  &nbsp &nbsp &nbspYes </span></li>
+					<li><i>Skill  </i><span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Beginner </span></li>
+					<li><i>Category </i><span>&nbsp &nbsp  &nbsp &nbsp &nbsp Soft Skills</span></li>	
+				</ul>
+				<h2 class="price"><strong>PRICE: &nbsp  &nbsp &nbsp Rs.{{price}}</strong></h2> 
+			</div>
+			<article>
+			  	<h2>Overview</h2>
+			  	<img src="{{url_for('static',filename='images/mentor.jpg')}}" alt="mentor" class="mentor">
+			  	<figcaption>Instructor: Christeen T Jose</figcaption>
+			  	<p>{{courseDescription}}</p>
+				<div class="container">
+					<div id="center" class="center">
+						<button class="btn" onclick="book()" {{disabled}}>{{Book}}</button>
+					</div>
+				</div>	
+			</article>
+		</div>
+	</body>
+</html>

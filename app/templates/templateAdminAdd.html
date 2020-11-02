@@ -1,0 +1,15 @@
+{% extends "templateAdmin.html" %}
+{% block heading %}Add Course:{% endblock %}
+{% block adminContent %}
+	<div class="displayBlock">
+		<form action="/admin/add/" method="post">
+			<div class="labels"><label for="cname"><b>Course name: </b></label></div>
+			<input type="text" placeholder="Enter Username" name="cname" id="cname" required pattern="^[a-zA-Z\s]+$"><br><br>
+			<div class="labels"><label for="price"><b>Price: </b></label></div>
+			<input type="text" placeholder="Enter Price" name="price" id="price" required><br><br>
+			<div class="labels"><label for="about"><b>About: </b></label></div>
+			<textarea placeholder="Enter About" name="about" id="about" required></textarea><br><br>
+			<input id="AdminSubmit" type="submit" class="adminButton" value="Add"><br>
+		</form>
+	</div>
+{% endblock %}

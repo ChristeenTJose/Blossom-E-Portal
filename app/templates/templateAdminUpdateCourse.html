@@ -1,0 +1,13 @@
+{% extends "templateAdmin.html" %}
+{% block heading %}Update Course:{% endblock %}
+{% block adminContent %} 
+	<div class="displayBlock">
+		<form action="/admin/update/course/{{course}}/" method="post">
+			<div class="labels"><label for="price"><b>Update Price: </b></label></div>
+			<input type="text" placeholder="Enter Price" name="price" id="price" required><br><br>
+			<div class="labels"><label for="about"><b>Update About: </b></label></div>
+			<textarea placeholder="Enter About" name="about" id="about" required></textarea><br><br>
+			<input id="AdminSubmit" type="submit" class="adminButton" value="Update"><br>
+		</form>
+	</div>
+{% endblock %}

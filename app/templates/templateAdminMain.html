@@ -1,0 +1,32 @@
+{% extends "templateAdmin.html" %}
+{% block heading %}ADMIN{% endblock %}
+{% block adminContent %}
+	<div class="adminOption">
+		<h2>View all bookings</h2>
+		<button onclick="location.href='/admin/view'" class="adminButton">View</button>
+	</div>
+	<div class="adminOption">
+		<h2>Search for a course</h2>
+		<button onclick="location.href='/admin/search'" class="adminButton">Search</button>
+	</div>
+	<div class="adminOption">
+		<h2>Add a new course</h2>
+		<button onclick="location.href='/admin/add'" class="adminButton">Add</button>
+	</div>
+	<div class="adminOption">
+		<h2>Update an existing course</h2>
+		<button onclick="location.href='/admin/update'" class="adminButton">Update</button>
+	</div>
+	<div class="adminOption">
+		<h2>Delete an existing course</h2>
+		<button onclick="location.href='/admin/delete'" class="adminButton">Delete</button>
+	</div>
+	<div class="adminOption">
+		<h2><br>Find details of a user</h2>
+		<button onclick="location.href='/admin/find'" class="adminButton">Find</button>
+	</div>
+	<div class="adminOption">
+		<h2>Log Out</h2>
+		<button onclick="location.href='/admin/logout'" class="adminButton">Log Out</button>
+	</div>
+{% endblock %}

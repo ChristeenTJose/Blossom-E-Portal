@@ -1,0 +1,11 @@
+{% extends "templateAdmin.html" %}
+{% block heading %}Update Course:{% endblock %}
+{% block adminContent %}
+	<div class="displayBlock">
+		<form action="/admin/update/course/" method="post">
+			<div class="labels"><label for="cname"><b>Course name: </b></label></div>
+			<input type="text" placeholder="Enter Course name" name="cname" id="cname" required pattern="^[a-zA-Z\s]+$"><br><br>
+			<input id="AdminSubmit" type="submit" class="adminButton" value="Continue"><br>
+		</form> 
+	</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "template.html" %}
+{% block css %}<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/admin.css')}}">{% endblock %}
+{% block content %}
+	<div class="adminHeader"><h1>{% block heading %}{% endblock %}</h1></div>
+	<div class="adminContent">
+		{% block adminContent %}{% endblock %}
+	</div>
+{% endblock %}

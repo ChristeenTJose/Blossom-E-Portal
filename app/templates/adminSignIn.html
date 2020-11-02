@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Blossum Education Solutions</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/adminSignIn.css')}}">
+		<script src="{{url_for('static',filename='jquery-3.5.1.min.js')}}"></script>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$("#adminSignIn").hide();
+				$("#adminSignIn").fadeIn(1200);
+			});
+			function validate2()
+			{
+				var uname = document.getElementById("uname");
+				if (uname.value.trim()=="")
+				{
+					alert('Blank values not allowed');
+					return false;
+				}
+				else
+				{
+      				return true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="adminSignIn">
+			<div id="adminLogo"></div>
+			<h1 id="adminHeader">ADMIN</h1>
+			<form action="/admin/" onsubmit="return validate2()" method="post">
+    			<div class="labels"><label for="uname"><b>Username: </b></label></div>
+    			<input type="text" placeholder="Enter Username" name="uname" id="uname" required pattern="^[a-zA-Z\s@]+$"><br><br>
+				<div class="labels"><label for="psw"><b>Password: </b></label></div>
+    			<input type="password" placeholder="Enter Password" name="psw" id="psw" required><br><br>
+				<input id="AdminSubmit" type="submit" value="Login"><br>
+			</form>
+		</div>
+	</body>
+</html>

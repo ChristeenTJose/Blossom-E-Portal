@@ -1,0 +1,8 @@
+{% extends "templateAdminNoResult.html" %}
+{% block adminContent %}
+	<div class="displayBlock">
+		<h1><div class="labels">Course: </div>{{results["courseName"]}}<h1>
+		<h2><div class="labels">Price: </div>{{results["price"]}}</h2>
+		<h2><div class="labels">About: </div>{{results["courseDescription"]}}</h2>
+	</div>
+{% endblock %}

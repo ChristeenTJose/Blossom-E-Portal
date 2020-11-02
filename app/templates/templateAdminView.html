@@ -1,0 +1,11 @@
+{% extends "templateAdmin.html" %}
+{% block heading %}All Bookings:{% endblock %}
+{% block adminContent %}
+	{% for booking in bookings %}
+		<div class="displayBlock">
+			<div class="viewPart viewPartMain">{{booking["course"]}}</div>
+			<div class="viewPart">was booked by</div>
+			<div class="viewPart viewPartMain">{{booking["username"]}}</div>
+		</div>
+	{% endfor %}
+{% endblock %}
