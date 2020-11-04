@@ -1,6 +1,6 @@
 # Blossom E Portal for Educational Solutions
 
-Project Demonstration:
+**Project Demonstration:**
 
 [Frontend](https://www.youtube.com/watch?v=wjIuV9p1Jzg)
 
