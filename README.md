@@ -16,3 +16,18 @@ Back-end:
 Other Software used: 
 * PyMongo (MongoDB driver for Python) 
 * MongoDB Atlas (Cloud Database Service)
+
+## Installation
+
+Enter the following commands in Command Prompt
+* pip install flask
+* pip install pymongo
+* pip install pymongo[srv]
+
+## Execution
+
+Execute app.py using python 
+(Note: You can use **any** python editor for execution)
+
+Visit http://127.0.0.1:5000/ or http://127.0.0.1:5000/admin on web browser
+
